@@ -20,9 +20,9 @@ class Transaction extends Model
 
     public function scopeLastMonthWalletTransactions($query, $walletId, $transactionType) {
 
-        $startOfLastMonth = Carbon::now()->subMonth()->startOfMonth();
-        $endOfLastMonth = Carbon::now()->subMonth()->endOfMonth();
-
+        $startOfLastMonth = Carbon::now()->startOfMonth()->toDateString();
+        $endOfLastMonth = Carbon::now()->endOfMonth()->toDateString();
+        
         $query->where('wallet_id', $walletId)
             ->where('transaction_type', $transactionType)
             ->whereBetween('date', [$startOfLastMonth, $endOfLastMonth]);

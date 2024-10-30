@@ -25,7 +25,7 @@ class WalletController extends Controller
     
                 $sellTransactions = Transaction::lastMonthWalletTransactions($wallet->id, TransactionType::SELL->value)->count();
                 $buyTransactions = Transaction::lastMonthWalletTransactions($wallet->id, TransactionType::BUY->value)->count();
-    
+
                 return response()->json([
                     'wallet_balance' => $wallet->balance,
                     'wallet_assets' => $walletAssets,

@@ -32,11 +32,8 @@ Make sure you have docker installed.
     ```bash
     cd app-api
     ```
-3. Build image:
-    ```bash
-    docker build -t app .
     ```
-4. Start container
+3. Build and Start container
     ```bash
     docker compose up -d
     ```
@@ -55,7 +52,7 @@ Make sure you have docker installed.
     php artisan serve --host 0.0.0
 
 ### Access database
-    localhost:8080
+    localhost:8080 - login: admin@admin.com password: admin
     
 Now you can access the route localhost:8000/wallet/assets/info to get some paginated information about the wallet, and see how the database looks like.
 
